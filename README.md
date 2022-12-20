@@ -59,7 +59,7 @@ https://user-images.githubusercontent.com/55427802/208730474-de75819f-d07e-4768-
 ## 🤝 Development
 
 - If you have suggestions for how this app could be improved, or want to report a bug, open an issue or [write me] an email! We'd love all and any contributions.
-- In order to run this application as unmanaged package keep in mind that some component's references have managed packaged `chatGPT\_\_` namespace. Delete them before deployment.
+- In order to run this application as unmanaged package keep in mind that some component's references have managed packaged `chatGPT__` namespace. Delete them before deployment.
 
 [//]: #
 [openai chat-gpt api]: https://openai.com/api/
