@@ -1,0 +1,37 @@
+<template>
+    <div class="slds-p-bottom_x-large">
+        <lightning-textarea name="questionArea"
+                            label="Your Question"
+                            placeholder="Question..."
+                            onchange={updateQuestion}
+                            onkeypress={handleEnter}
+                            value={newQuestion}></lightning-textarea>
+        <div style="float: right;">
+            <lightning-button icon-name="utility:send"
+                              variant="brand"
+                              label="Send"
+                              disabled={sendButtonDisabled}
+                              onclick={handleSend}
+                              class="slds-m-left_medium"></lightning-button>
+        </div>
+    </div>
+    <template if:true={isProcessing}>
+        <div class="slds-align_absolute-center slds-p-top_x-large">
+            <lightning-spinner variant="brand" alternative-text="Loading" size="large"
+                               class="slds-spinner_inline"></lightning-spinner>
+        </div>
+    </template>
+    <template if:true={isProcessed}>
+        <div class="slds-p-vertical_small">
+            <div class="slds-box slds-theme_shade">
+                <b>Question:</b>
+                <p>{lastQuestion}</p>
+                <b>Answer:</b>
+                <p>{answer}</p>
+            </div>
+        </div>
+    </template>
+    <template if:true={isError}>
+        <c-error-send-page error={error} request={request}></c-error-send-page>
+    </template>
+</template>

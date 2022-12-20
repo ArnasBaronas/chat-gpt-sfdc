@@ -1,0 +1,15 @@
+<template>
+    <div style="display:flex;
+                flex-direction:row;
+                justify-items:center;
+                align-items:center;" class="slds-align-middle slds-box slds-theme_shade">
+        <div style="float: left; " class="slds-p-right_medium">
+            <lightning-icon icon-name={icon} alternative-text={title}
+                            title={title} size="large"></lightning-icon>
+        </div>
+        <div>
+            <div class="slds-page-header__title">{title}</div>
+            <p>{description}</p>
+        </div>
+    </div>
+</template>

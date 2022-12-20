@@ -1,0 +1,48 @@
+<template>
+    <div class="slds-p-bottom_x-large">
+        <div>
+            <lightning-textarea name="inputArea"
+                                label="Prompt"
+                                placeholder="Text to modify..."
+                                onchange={updatePrompt}
+                                value={newPrompt}></lightning-textarea>
+
+        </div>
+        <div class="slds-p-bottom_large">
+            <lightning-textarea name="instructionArea"
+                                label="Instructions"
+                                placeholder="Instructions..."
+                                onchange={updateInstructions}
+                                value={newInstructions}></lightning-textarea>
+        </div>
+        <div style="float: right;">
+            <lightning-button icon-name="utility:send"
+                              variant="brand"
+                              label="Send"
+                              disabled={sendButtonDisabled}
+                              onclick={handleSend}
+                              class="slds-m-left_medium"></lightning-button>
+        </div>
+    </div>
+    <template if:true={isProcessing}>
+        <div class="slds-align_absolute-center slds-p-top_x-large">
+            <lightning-spinner variant="brand" alternative-text="Loading" size="large"
+                               class="slds-spinner_inline"></lightning-spinner>
+        </div>
+    </template>
+    <template if:true={isProcessed}>
+        <div class="slds-p-vertical_small">
+            <div class="slds-box slds-theme_shade">
+                <b>Prompt:</b>
+                <p>{lastPrompt}</p>
+                <b>Instructions:</b>
+                <p>{lastInstructions}</p>
+                <b>Result:</b>
+                <p>{result}</p>
+            </div>
+        </div>
+    </template>
+    <template if:true={isError}>
+        <c-error-send-page error={error} request={request}></c-error-send-page>
+    </template>
+</template>

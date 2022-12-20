@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <description>Open AI application in Salesforce Lighting experience.</description>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__Tab</target>
+        <target>lightning__AppPage</target>
+    </targets>
+    <masterLabel>Open AI App</masterLabel>
+</LightningComponentBundle>

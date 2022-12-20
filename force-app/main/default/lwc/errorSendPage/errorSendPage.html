@@ -1,0 +1,19 @@
+<template>
+    <div class="slds-p-vertical_small">
+        <div class="slds-box slds-theme_shade">
+            <div class="slds-align_absolute-center slds-text-color_error"><b>Oops! An error has occurred.</b></div>
+            <div class="slds-align_absolute-center slds-m-top_medium">
+                <template if:true={emailDeliverabilityEnabled.data}>
+                    <lightning-button name="sendButton"
+                                      label={sendButtonState.label}
+                                      variant={sendButtonState.variant}
+                                      icon-name={sendButtonState.icon}
+                                      onclick={handleSend}></lightning-button>
+                </template>
+                <template if:false={emailDeliverabilityEnabled.data}>
+                    <a href={mailToReference} target="_blank">Send log to developer</a>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>

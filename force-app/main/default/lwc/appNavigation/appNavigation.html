@@ -1,0 +1,25 @@
+<template>
+    <div>
+        <lightning-vertical-navigation onselect={handleSelect} selected-item={selectedItem}>
+            <lightning-vertical-navigation-section label="Chat-GPT">
+                <lightning-vertical-navigation-item-icon label="Completions"
+                                                         name="completions"
+                                                         icon-name="standard:prompt"></lightning-vertical-navigation-item-icon>
+                <lightning-vertical-navigation-item-icon label="Edits"
+                                                         name="edits"
+                                                         icon-name="custom:custom83"></lightning-vertical-navigation-item-icon>
+                <lightning-vertical-navigation-item-icon label="Images"
+                                                         name="images"
+                                                         icon-name="custom:custom38"></lightning-vertical-navigation-item-icon>
+            </lightning-vertical-navigation-section>
+            <lightning-vertical-navigation-section label="Settings">
+                <lightning-vertical-navigation-item-icon label="API settings"
+                                                         name="apiConfig"
+                                                         icon-name="standard:apex_plugin"></lightning-vertical-navigation-item-icon>
+                <lightning-vertical-navigation-item-icon label="Bot settings"
+                                                         name="botConfig"
+                                                         icon-name="standard:bot"></lightning-vertical-navigation-item-icon>
+            </lightning-vertical-navigation-section>
+        </lightning-vertical-navigation>
+    </div>
+</template>

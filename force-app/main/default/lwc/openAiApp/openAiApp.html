@@ -1,0 +1,51 @@
+<template>
+    <lightning-card>
+        <!-- For pre-deployment version
+        <div class="slds-align_absolute-center slds-m-around_large">
+            <lightning-button name="grantAccessButton"
+                              label="Process Pre-Deployment"
+                              variant="brand"
+                              icon-name="utility:lightning_extension"
+                              disabled={grantAccessButtonDisabled}
+                              onclick={grantAccess}></lightning-button>
+        </div>-->
+        <lightning-layout>
+            <lightning-layout-item padding="around-small">
+                <c-app-navigation selected-item={selectedPage} onnavigate={handleSelect}></c-app-navigation>
+            </lightning-layout-item>
+            <lightning-layout-item flexibility="auto" padding="around-medium">
+                <div class="slds-p-horizontal_x-large">
+                    <template if:true={renderHeader}>
+                        <c-page-header title={headerTitle}
+                                       icon={headerIcon}
+                                       description={headerDescription}>
+                        </c-page-header>
+                    </template>
+                    <template if:false={renderHeader}>
+                        <div class="slds-align_absolute-center slds-p-top_x-large">
+                            <lightning-spinner variant="brand" alternative-text="Loading" size="large"
+                                               class="slds-spinner_inline"></lightning-spinner>
+                        </div>
+                    </template>
+                    <div class="slds-p-top_large">
+                        <template if:true={completions}>
+                            <c-completions-page></c-completions-page>
+                        </template>
+                        <template if:true={edits}>
+                            <c-edits-page></c-edits-page>
+                        </template>
+                        <template if:true={images}>
+                            <c-images-page></c-images-page>
+                        </template>
+                        <template if:true={apiConfig}>
+                            <c-api-settings-page></c-api-settings-page>
+                        </template>
+                        <template if:true={botConfig}>
+                            <c-bot-settings-page></c-bot-settings-page>
+                        </template>
+                    </div>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

@@ -1,0 +1,38 @@
+<template>
+    <div class="slds-p-around_medium">
+        <div class="slds-text-heading_small">
+            The OpenAI API uses API keys for authentication. Visit your <a target="_blank"
+                                                                           href="https://beta.openai.com/account/api-keys">API
+            Keys</a> page to retrieve the API key. Save it after generating it, you will need it to complete application
+            setup
+        </div>
+        <div class="slds-p-around_medium">
+            <lightning-input type="password"
+                             name="API_key"
+                             label="API Key"
+                             variant="label-stacked"
+                             value={newKey}
+                             onchange={updateKey}
+                             placeholder="🔑 API key goes here..."></lightning-input>
+        </div>
+        <div class="slds-align_absolute-center">
+            <div class="slds-m-around_medium">
+                <lightning-button variant={updateButtonState.variant}
+                                  label={updateButtonState.label}
+                                  name="updateButton"
+                                  onclick={handleUpdate}
+                                  icon-name={updateButtonState.icon}
+                                  class="slds-p-around_xxx-small">
+                </lightning-button>
+            </div>
+            <div class="slds-m-around_medium">
+                <lightning-button name="grantAccessButton"
+                                  label="Grant Access"
+                                  variant="brand"
+                                  icon-name="utility:lightning_extension"
+                                  disabled={grantAccessButtonDisabled}
+                                  onclick={grantAccess}></lightning-button>
+            </div>
+        </div>
+    </div>
+</template>
