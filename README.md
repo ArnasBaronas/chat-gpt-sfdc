@@ -5,11 +5,11 @@ Standalone Salesforce lighting-web-components application created levering [Open
 ## ✨ Features
 
 - **Completions API interface in lighting experience.**<br />
-  <img alt="Completions UI" src="/media/Completions_UI.png"/>
+  <img alt="Completions UI" src="/media/Completions_UI.png" width="500"/>
 - **Edits API interface in lighting experience.**<br/>
-  <img alt="Edits UI" src="/media/Edits_UI.png"/>
+  <img alt="Edits UI" src="/media/Edits_UI.png" width="500"/>
 - **API settings UI.**<br/>
-  <img alt="API Settings UI" src="/media/API_Settings_UI.png"/>
+  <img alt="API Settings UI" src="/media/API_Settings_UI.png" width="500"/>
 
 ## 🚧 Features under development
 
@@ -58,7 +58,8 @@ https://user-images.githubusercontent.com/55427802/208730474-de75819f-d07e-4768-
 
 ## 🤝 Development
 
-If you have suggestions for how this app could be improved, or want to report a bug, open an issue or [write me] an email! We'd love all and any contributions.
+- If you have suggestions for how this app could be improved, or want to report a bug, open an issue or [write me] an email! We'd love all and any contributions.
+- In order to run this application as unmanaged package keep in mind that some component's references have managed packaged **(chatGPT\_\_)** namespace. Delete it before deployment.
 
 [//]: #
 [openai chat-gpt api]: https://openai.com/api/
