@@ -33,6 +33,7 @@
 5. Update API key in **OpenAI** lighting application's **API settings** section
 6. If application still do not work, go to **OpenAI** lighting application's **API settings** section and click _**"Grant Access"**_ button.
 
+https://user-images.githubusercontent.com/55427802/208730474-de75819f-d07e-4768-ac3a-c7e34880f803.mp4
 
 ## 🗑️ Uninstalling
 
