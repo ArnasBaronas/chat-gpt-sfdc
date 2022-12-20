@@ -1,5 +1,7 @@
 # OpenAI Chat-GPT application in Salesforce Lighting experience ⚡
 
+Standalone Salesforce lighting-web-components application created levering [OpenAI Chat-GPT API].
+
 ## ✨ Features
 
 - **Completions API interface in lighting experience.**<br />
@@ -59,6 +61,7 @@ https://user-images.githubusercontent.com/55427802/208730474-de75819f-d07e-4768-
 If you have suggestions for how this app could be improved, or want to report a bug, open an issue or [write me] an email! We'd love all and any contributions.
 
 [//]: #
+[openai chat-gpt api]: https://openai.com/api/
 [**"pre-deployment"**]: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t68000000ko4Z
 [**"initial version"**]: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t68000000ko8w
 [execute anonymous apex]: https://help.salesforce.com/s/articleView?id=sf.code_dev_console_execute_anonymous.htm
