@@ -3,11 +3,11 @@
 
 ## ✨ Features
 
-- **Completions API interface in lighting experience.**
+- **Completions API interface in lighting experience.**<br />
   <img alt="Completions UI" src="/images/Completions_UI.png"/>
-- **Edits API interface in lighting experience.**
+- **Edits API interface in lighting experience.**<br/>
   <img alt="Edits UI" src="/images/Edits_UI.png"/>
-- **API settings UI.**
+- **API settings UI.**<br/>
   <img alt="API Settings UI" src="/images/API_Settings_UI.png"/>
 
 ## 🚧 Features under development
