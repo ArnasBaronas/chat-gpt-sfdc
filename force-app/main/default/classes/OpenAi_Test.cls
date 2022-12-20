@@ -19,13 +19,13 @@ private class OpenAi_Test {
 			].Body.toString(), OpenAiResponse.Images.class)).data[0].url;
 
 
-	@IsTest(SeeAllData=true) //ConnectApi methods are not supported in data siloed tests.
+	@SuppressWarnings('PMD.ApexUnitTestShouldNotUseSeeAllDataTrue') /* ConnectApi methods are not supported in data siloed tests. */
+	@IsTest(SeeAllData=true)
 	static void updateApiKey() {
 		System.runAs(prepareUserForTest(PROFILE_TO_TEST_SETUP)) {
 			try {
 				OpenAiAuthManger.updateApiKey('newKey');
 			} catch (Exception exc) {
-				System.debug(exc.getMessage());
 				Assert.fail('API key update should not throw exceptions - ' + exc.getMessage());
 			}
 		}

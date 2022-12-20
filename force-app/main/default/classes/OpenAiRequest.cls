@@ -1,3 +1,8 @@
+/**
+ * @description Wrapper class used for OpenAI API request body serialization
+ * @author <a href=mailto:arnasbaronas@gmail.com>Arnas Baronas</a>
+ */
+@SuppressWarnings('PMD.FieldNamingConventions') /* Field naming should same as stated in OpenAI API documentation for easier serialization */
 public virtual class OpenAiRequest {
 
 	//TODO: move to custom metadata and implement UI changes

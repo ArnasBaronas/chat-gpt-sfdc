@@ -1,8 +1,13 @@
+/**
+ * @description Wrapper class used for OpenAI API response body deserialization
+ * @author <a href=mailto:arnasbaronas@gmail.com>Arnas Baronas</a>
+ */
+@SuppressWarnings('PMD.FieldNamingConventions') /* Field naming should same as stated in OpenAI API documentation for easier serialization */
 public virtual class OpenAiResponse {
 
 	public Integer created;
 
-	public class Completions extends OpenAiResponse{
+	public class Completions extends OpenAiResponse {
 		public String id;
 		public String model;
 		public List<Choice> choices;

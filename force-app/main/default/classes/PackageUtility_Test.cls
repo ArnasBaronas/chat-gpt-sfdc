@@ -1,30 +1,5 @@
 @IsTest
 private class PackageUtility_Test {
-
-	/*@IsTest
-	static void testNewInstallation() {
-		PackageUtility installation = new PackageUtility();
-		Test.testInstall(installation, null);
-
-	}
-
-	@IsTest
-	static void testExistingInstallation() {
-		Database.insert(new PermissionSetAssignment(
-				AssigneeId = UserInfo.getUserId(),
-				PermissionSetId = PackageUtility.chatGptSetId), false);
-		PackageUtility installation = new PackageUtility();
-		Test.testInstall(installation, new Version(1,0), true);
-	}
-
-	@IsTest
-	static void testFailingInstallation() {
-		PackageUtility installation = new PackageUtility();
-		installation.forceErrorWhileTesting = true;
-		Test.testInstall(installation, new Version(1,0), true);
-		Assert.areEqual(1, System.Limits.getEmailInvocations());
-	}*/
-
 	@IsTest
 	static void grantAccess() {
 		PackageUtility.grantAccess(UserInfo.getUserId());
@@ -53,7 +28,7 @@ private class PackageUtility_Test {
 	@IsTest
 	static void sendEmail() {
 		try {
-			PackageUtility.sendEmailToDeveloper('test@tester.com', 'test', 'test');
+			PackageUtility.sendEmail('test@tester.com', 'test', 'test');
 			if (!PackageUtility.isEmailDeliverabilityEnabled()) {
 				Assert.fail('Feature shouldn\'t work');
 			}

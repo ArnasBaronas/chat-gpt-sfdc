@@ -1,8 +1,11 @@
+/**
+ * @description Class bundles utility methods used in package
+ * @author <a href=mailto:arnasbaronas@gmail.com>Arnas Baronas</a>
+ */
+@SuppressWarnings('PMD.AvoidGlobalModifier') /* Global access modifier is not necessary any more but cannot be removed because was included in managed package */
 global class PackageUtility implements InstallHandler {
 
-	//final static String ERROR_LOG_EMAIL_SUBJECT = 'Problems occurred during OpenAI Salesforce app installation ';
-	//final static String DEVELOPER_EMAIL = 'arnasbaronas@gmail.com';
-
+	/** @description Utility property contains external credential name used in package */
 	public static String externalCredentialName {
 		get {
 			String externalCredentialName = '';
@@ -13,6 +16,8 @@ global class PackageUtility implements InstallHandler {
 			return externalCredentialName;
 		}
 	}
+
+	/** @description Utility property contains permission set id used in package */
 	public final static String chatGptSetId {
 		get {
 			return [
@@ -23,6 +28,11 @@ global class PackageUtility implements InstallHandler {
 		}
 	}
 
+	/**
+	 * @description Method checks if org's email deliverability access level is set to "All email"
+	 *
+	 * @return Boolean value
+	 */
 	@AuraEnabled(Cacheable=true)
 	public static Boolean isEmailDeliverabilityEnabled() {
 		try {
@@ -34,11 +44,17 @@ global class PackageUtility implements InstallHandler {
 		}
 	}
 
+	/**
+	 * @description Method sends email message.
+	 * @param recipient String value of recipient's email address
+	 * @param subject String value of email subject
+	 * @param body String value of email body
+	 */
 	@AuraEnabled
-	public static void sendEmailToDeveloper(String developerEmail, String subject, String body) {
+	public static void sendEmail(String recipient, String subject, String body) {
 		Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
 		mail.setToAddresses(new List<String>{
-				developerEmail
+				recipient
 		});
 		mail.setSubject(subject);
 		mail.saveAsActivity = false;
@@ -48,6 +64,10 @@ global class PackageUtility implements InstallHandler {
 		});
 	}
 
+	/**
+	 * @description Method insert package PermissionSetAssignment for selected user
+	 * @param userId Id of selected user
+	 */
 	@AuraEnabled
 	public static void grantAccess(Id userId) {
 		Database.insert(new PermissionSetAssignment(
@@ -56,34 +76,19 @@ global class PackageUtility implements InstallHandler {
 		), false);
 	}
 
+	/**
+	 * @description Post-Install script
+	 * @param context InstallContext used in while running Post-Install script
+	 */
+	@SuppressWarnings('PMD.EmptyStatementBlock')
 	global void onInstall(InstallContext context) {
-		/*try {
-			Id permissionSetId = chatGptSetId;
-			List<PermissionSetAssignment> permissionSetAssignments = new List<PermissionSetAssignment>();
-			for(User user : [SELECT Id FROM User WHERE IsActive = TRUE]) {
-				permissionSetAssignments.add(
-						new PermissionSetAssignment(
-								AssigneeId = user.Id,
-								PermissionSetId = permissionSetId)
-				);
-			}
-			Database.insert(permissionSetAssignments, false);
-			if (forceErrorWhileTesting) {
-				throw new HandledException('Exception forced to make better unit test coverage');
-			}
-		} catch (Exception exc) {
-			if (isEmailDeliverabilityEnabled()) {
-				String emailSubject = ERROR_LOG_EMAIL_SUBJECT + System.Datetime.now();
-				String emailBody = ERROR_LOG_EMAIL_SUBJECT + '\n\nError information:\n---' + System.Datetime.now() + '---\n';
-				emailBody += '\nError type: ' + exc.getTypeName();
-				emailBody += '\nLine number: ' + Integer.valueOf(exc.getLineNumber());
-				emailBody += '\nStack trace:\n' + exc.getStackTraceString();
-				emailBody += '\nMore information:\n' + exc.getMessage();
-				sendEmailToDeveloper(DEVELOPER_EMAIL, emailSubject, emailBody);
-			}
-		}*/
+		/* Post-Install script is not used anymore, but cannot be deprecated */
 	}
 
+	/**
+	 * @description Method checks if class is in managed package and returns it's namespace if it is
+	 * @return String value of namespace
+	 */
 	public static String getNamespacePrefix() {
 		String namespacePrefix;
 		List<String> classNameParts = String.valueOf(PackageUtility.class).split('\\.', 2);
