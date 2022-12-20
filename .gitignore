@@ -38,3 +38,7 @@ $RECYCLE.BIN/
 
 # Local environment variables
 .env
+
+# Iluminated Cloud directories
+Chat-GPT.iml
+IluminatedCloud/
