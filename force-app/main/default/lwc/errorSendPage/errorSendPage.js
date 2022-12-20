@@ -1,6 +1,6 @@
 import {api, LightningElement, wire} from 'lwc';
 import isEmailDeliverabilityEnabled from '@salesforce/apex/PackageUtility.isEmailDeliverabilityEnabled';
-import sendEmailToDeveloper from '@salesforce/apex/PackageUtility.sendEmailToDeveloper';
+import sendEmail from '@salesforce/apex/PackageUtility.sendEmail';
 import {ShowToastEvent} from "lightning/platformShowToastEvent";
 import {reduceErrors} from 'c/ldsUtils';
 
@@ -47,7 +47,7 @@ export default class ErrorSendPage extends LightningElement {
 
     handleSend() {
         this.sendButtonState.disabled = true;
-        sendEmailToDeveloper({
+        sendEmail({
             developerEmail: DEVELOPER_EMAIL,
             subject: this.errorMailSubject,
             body: this.errorMailBody
