@@ -27,7 +27,7 @@ Standalone Salesforce lighting-web-components application created levering [Open
 
 1. Install [**"Pre-Deployment"**] version (package ID = `04t68000000ko4Z`)
 2. Go to **OpenAI** lighting application and click _**"Process Pre-Deployment"**_ button.
-3. Upgrade package to [**"Initial Version"**] (package ID = `04t68000000ko8w`).
+3. Upgrade package to [**"Initial Version"**] (package ID = `04t68000000koce`).
 4. The OpenAI API uses API keys for authentication. Visit your [API keys] page to retrieve the API key. Save it after generating it, you will need it to complete application setup.
 5. Update API key in **OpenAI** lighting application's **API settings** section
 6. If application still do not work, go to **OpenAI** lighting application's **API settings** section and click _**"Grant Access"**_ button.
@@ -64,7 +64,7 @@ https://user-images.githubusercontent.com/55427802/208730474-de75819f-d07e-4768-
 [//]: #
 [openai chat-gpt api]: https://openai.com/api/
 [**"pre-deployment"**]: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t68000000ko4Z
-[**"initial version"**]: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t68000000ko8w
+[**"initial version"**]: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t68000000koce
 [execute anonymous apex]: https://help.salesforce.com/s/articleView?id=sf.code_dev_console_execute_anonymous.htm
 [write me]: mailto:arnasbaronas@gmail.com?subject=chat-gpt-sfdc%20feedback
 [arnasbaronas@gmail.com]: mailto:arnasbaronas@gmail.com
