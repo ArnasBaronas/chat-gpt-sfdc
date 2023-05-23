@@ -4,7 +4,7 @@ import sendEmail from '@salesforce/apex/PackageUtility.sendEmail';
 import {ShowToastEvent} from "lightning/platformShowToastEvent";
 import {reduceErrors} from 'c/ldsUtils';
 
-const DEVELOPER_EMAIL = "arnasbaronas@gmail.com"
+const DEVELOPER_EMAIL = "arnasbaronas@gmail.com";
 const ERROR_LOG_EMAIL_SUBJECT = "Problems occurred in OpenAI Salesforce app";
 const SEND_BUTTON_STATES = {
     ready: {
@@ -48,7 +48,7 @@ export default class ErrorSendPage extends LightningElement {
     handleSend() {
         this.sendButtonState.disabled = true;
         sendEmail({
-            developerEmail: DEVELOPER_EMAIL,
+            recipient: DEVELOPER_EMAIL,
             subject: this.errorMailSubject,
             body: this.errorMailBody
         }).then(() => {
